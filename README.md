@@ -28,7 +28,7 @@ git remote add mattermost-recette git+ssh://git@push-n2-par-clevercloud-customer
 ##### À faire à chaque fois
 
 - Récupérer les dernières modifications du dépôt [conseiller-numerique-deploy](https://github.com/anct-cnum/conseiller-numerique-deploy).
-- Copier le fichier [config.json](https://github.com/anct-cnum/conseiller-numerique-deploy/blob/main/mattermost/config.json) depuis le projet [conseiller-numerique-deploy](https://github.com/anct-cnum/conseiller-numerique-deploy) à la racine de ce projet.
+- Copier le fichier [config-recette.json] en le renommant en [config.json] (https://github.com/anct-cnum/conseiller-numerique-deploy/blob/main/mattermost/config-recette.json) depuis le projet [conseiller-numerique-deploy](https://github.com/anct-cnum/conseiller-numerique-deploy) à la racine de ce projet.
 - Supprimer le fichier `.gitignore`
 - Ajouter ces deux modifications :
 ```shell
@@ -44,7 +44,7 @@ git push mattermost-recette recette:master --force
 ```
 - Une fois les modifications publiées, les changements temporaires appliqués au dépôt pour le déploiement doivent être annulés :
 ```shell
-git reset HEAD^ --hard
+git reset --hard HEAD~1
 ```
 
 #### Production
@@ -75,7 +75,7 @@ git push mattermost-prod main:master --force
 ```
 - Une fois les modifications publiées, les changements temporaires appliqués au dépôt pour le déploiement doivent être annulés :
 ```shell
-git reset HEAD^ --hard
+git reset --hard HEAD~1
 ```
 
 ## Installation locale
